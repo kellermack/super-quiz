@@ -1,0 +1,49 @@
+ <?php 
+           
+ $birdName = $_POST ['birdName'];
+            
+         
+?>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>O Benjamin</title>
+        
+    <body>
+        
+        <form action="question4.php" method="POST">
+        <h1>Benjamin Franklin wanted this to be the National Bird</h1>
+        
+        <input type ="radio" name="bird" value="dodo"> dodo<br>
+        <input type ="radio" name="bird" value="vulture"> vulture<br>
+        <input type ="radio" name="bird" value="turkey"> turkey<br>
+        <input type ="radio" name="bird" value="albatross"> albatross<br>
+        <input type ="radio" name="bird" value="bird"> pelican<br>
+        
+               <br><br>
+    <input type="submit" name="submit" value="Search"/><br><br>
+   
+        
+        </form>
+            
+       <?php
+
+    
+              if (($bird != $bingo)) {
+                echo "Gobble Gobble you are right!";
+            } else {
+               echo "I say I say you are wrong";
+           } 
+            
+        
+        ?>
+        
+        
+    </body>
+        
+  </head>
+    
+  </html>
