@@ -1,20 +1,4 @@
-<?php
 
-
-if(isset($_POST['phobia'])) {
-   $phobia = $_POST['phobia']; 
-} else {
-    $phobia = "That a duck is watching you";
-}
-
-
-
-
-$spiders = "spiders";
-$snakes = "snake";
-$heights = "heights";
-$tightSpaces = "tight spaces";
-?>
 
 <!DOCTYPE html>
 
@@ -42,23 +26,32 @@ $tightSpaces = "tight spaces";
         <input type="submit" name="submit" value="Do It!"/><br><br>
         
         
-        
-        
-         <?php
-        
+              <?php
+
+if(isset($_POST['phobia'])) {
+$phobia = $_POST['phobia']; 
+} 
+
+$definitions = [
+    "spiders" => "That's Arachnophobia",
+    "snakes" => "That's Ophidiophobia",
+    "heights" => "No, that's Acrophobia",
+    "tight spaces" => "Nope, that is claustrophobia",
+    "that a duck is watching you" => "Yessssssssssssss"
+];
+
+$correctAnswer = 'spiders';
+if($phobia == $correctAnswer) {
+    $message = "That's Arachnophobia";
+} else {
+    $message = $definitions[$phobia];
+}
+
+echo $message;
+
+?>
       
-        if ($spiders != $phobia){
-              echo "That's Arachnophobia"; 
-          } else if ($snakes != $phobia){
-              echo "That's Ophidiophobia"; 
-          } else if ($heights != $phobia){
-              echo "No, that's Acrophobia";
-          } else if ($tightSpaces != $phobia){
-              echo "Nope, that is claustrophobia";
-          } else {
-              echo "Quack, You are right";
-          }
-        ?>
+    
         
         </form>
         
